@@ -6,7 +6,7 @@
 
 	<artifactId>wallet</artifactId>
 	<packaging>apk</packaging>
-	<version>4.24-blackberry-test</version>
+	<version>4.24-blackberry</version>
 	<name>Bitcoin Wallet</name>
 
 	<parent>
