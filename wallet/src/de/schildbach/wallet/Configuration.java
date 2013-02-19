@@ -39,7 +39,6 @@ public class Configuration
 	private final SharedPreferences prefs;
 
 	public static final String PREFS_KEY_BTC_PRECISION = "btc_precision";
-	public static final String PREFS_KEY_CONNECTIVITY_NOTIFICATION = "connectivity_notification";
 	public static final String PREFS_KEY_EXCHANGE_CURRENCY = "exchange_currency";
 	public static final String PREFS_KEY_TRUSTED_PEER = "trusted_peer";
 	public static final String PREFS_KEY_TRUSTED_PEER_ONLY = "trusted_peer_only";
@@ -104,11 +103,6 @@ public class Configuration
 			return new MonetaryFormat().shift(3).minDecimals(2).optionalDecimals(2, 1);
 		else
 			return new MonetaryFormat().shift(6).minDecimals(0).optionalDecimals(2);
-	}
-
-	public boolean getConnectivityNotificationEnabled()
-	{
-		return prefs.getBoolean(PREFS_KEY_CONNECTIVITY_NOTIFICATION, false);
 	}
 
 	public String getTrustedPeerHost()
