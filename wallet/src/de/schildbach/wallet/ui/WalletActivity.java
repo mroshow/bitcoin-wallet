@@ -80,6 +80,8 @@ import com.google.bitcoin.core.Wallet;
 
 import de.schildbach.wallet.Constants;
 import de.schildbach.wallet.WalletApplication;
+import de.schildbach.wallet.scanner.ZBarConstants;
+import de.schildbach.wallet.scanner.ZBarScannerActivity;
 import de.schildbach.wallet.ui.InputParser.BinaryInputParser;
 import de.schildbach.wallet.ui.InputParser.StringInputParser;
 import de.schildbach.wallet.util.CrashReporter;
@@ -180,7 +182,7 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 	{
 		if (requestCode == REQUEST_CODE_SCAN && resultCode == Activity.RESULT_OK)
 		{
-			final String input = intent.getStringExtra(ScanActivity.INTENT_EXTRA_RESULT);
+			final String input = intent.getStringExtra(ZBarConstants.SCAN_RESULT);
 
 			new StringInputParser(input)
 			{
@@ -310,7 +312,7 @@ public final class WalletActivity extends AbstractOnDemandServiceActivity
 
 	public void handleScan()
 	{
-		startActivityForResult(new Intent(this, ScanActivity.class), REQUEST_CODE_SCAN);
+		startActivityForResult(new Intent(this, ZBarScannerActivity.class), REQUEST_CODE_SCAN);
 	}
 
 	public void handleExportKeys()
